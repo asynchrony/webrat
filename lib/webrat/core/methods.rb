@@ -35,6 +35,7 @@ module Webrat
       :header, :http_accept, :basic_auth,
       :save_and_open_page,
       :fills_in, :fill_in,
+      :fire_event,
       :checks, :check,
       :unchecks, :uncheck,
       :chooses, :choose,
