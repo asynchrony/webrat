@@ -201,11 +201,8 @@ module Webrat
 
 
     def create_browser
-      $browser = ::Selenium::Client::Driver.new(:host => Webrat.configuration.selenium_server_address || "localhost",
-                                                :port => Webrat.configuration.selenium_server_port, 
-                                                :browser => Webrat.configuration.selenium_browser_key, 
-                                                :url => "http://#{Webrat.configuration.application_address}:#{Webrat.configuration.application_port}",
-                                                :timeout_in_seconds => Webrat.configuration.selenium_browser_startup_timeout)
+      $browser = ::Selenium::Client::Driver.new(Webrat.configuration.selenium_server_address || "localhost",
+          Webrat.configuration.selenium_server_port, Webrat.configuration.selenium_browser_key, "http://#{Webrat.configuration.application_address}:#{Webrat.configuration.application_port}")
       $browser.set_speed(0) unless Webrat.configuration.selenium_server_address
 
       at_exit do
